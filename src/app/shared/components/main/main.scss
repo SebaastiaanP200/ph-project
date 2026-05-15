@@ -1,0 +1,16 @@
+.title__testimony {
+  margin: 2rem auto;
+  padding: 1rem;
+  font-size: 3rem;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  animation: aparecer both;
+  animation-timeline: view();
+  animation-range: cover 15% contain 50%;
+  background-color: #222;
+  letter-spacing: 5px;
+  border-radius: 0px;
+  filter: drop-shadow(0 0 2px #fff);
+  text-shadow: 0 0 10px #000;
+  font-style: oblique;
+}
