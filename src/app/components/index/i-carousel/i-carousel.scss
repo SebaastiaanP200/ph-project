@@ -1,0 +1,31 @@
+.carousel__container {
+  display: flex;
+  position: relative;
+  height: 70vh;
+  width: auto;
+  background: radial-gradient(circle, #333, #444);
+  margin: 1rem auto;
+}
+
+.carousel__container img {
+  display: flex;
+  object-fit: cover;
+  width: 5%;
+  flex-grow: 1;
+  opacity: .8;
+  filter: drop-shadow(2px 2px 4px #111);
+  border: 5px solid #111;
+  animation: move-carousel 3s ease-in-out;
+  transition: scale 0.6s ease-in-out;
+}
+
+.carousel__container img:hover {
+  scale: .95;
+  padding: .3rem; 
+  background-color: #bbb;
+  cursor: pointer;
+  opacity: 1;
+  filter: drop-shadow(10px 20px 30px #000);
+  outline: 5px solid #999;
+  border-radius: 0;
+}

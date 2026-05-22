@@ -1,1 +1,9 @@
-<p>i-carousel works!</p>
+<div class="carousel-container">
+  @for (image of limitedCarousel; track image.url) {
+    <img 
+      [src]="image.url" 
+      [alt]="image.name" 
+      loading="lazy" 
+      class="image" />
+  }
+</div>

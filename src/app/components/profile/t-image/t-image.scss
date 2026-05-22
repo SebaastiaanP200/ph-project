@@ -1,0 +1,51 @@
+#f1 {
+  display: grid;
+  grid-column: 1/2;
+  position: absolute;
+  bottom: 5%;
+  left: 6%;
+  margin: 5rem auto;
+  width: 70%;
+  height: 75%;
+  object-fit: cover;
+  filter: drop-shadow(0 0 8px #000);
+  border: 5px solid #111;
+  border-radius: 120px 0 120px 0;
+  transition: scale 0.6s ease-in-out;
+}
+
+#f1:hover {
+  filter: drop-shadow(0 0 10px #fff), drop-shadow(2px 2px 4px #111), drop-shadow(8px 8px 0px #000);
+  padding: .3rem;
+  background-color: #fff;
+  outline: 5px solid #999;
+  scale: .90;
+  cursor: pointer;
+  opacity: 1;
+}
+
+#f2 {
+  display: grid;
+  grid-column: 3/4;
+  position: absolute;
+  top: 10%;
+  left: 24%;
+  margin: 5rem auto;
+  width: 70%;
+  height: 75%;
+  object-fit: cover;
+  filter: drop-shadow(0 0 8px #000);
+  border: 5px solid #111;
+  border-radius: 120px 0 120px 0;
+  transition: scale 0.6s ease-in-out;
+}
+
+#f2:hover {
+  filter: drop-shadow(0 0 10px #fff),   drop-shadow(2px 2px 4px #111),   drop-shadow(8px 8px 0px #000);
+  padding: .3rem;
+  background-color: #fff;
+  outline: 5px solid #999;
+  scale: .90;
+  cursor: pointer;
+  opacity: 1;
+}

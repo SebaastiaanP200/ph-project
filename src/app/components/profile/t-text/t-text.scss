@@ -1,0 +1,20 @@
+.profile__title, .profile__subtitle {
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  animation: aparecer both;
+  animation-timeline: view();
+  animation-range: cover 15% contain 50%;
+  text-shadow: 0 0 10px #000;
+  filter: drop-shadow(0 0 2px #fff);
+  font-style: oblique;
+  letter-spacing: 5px;
+  border-radius: 0px;
+}
+
+.profile__title {
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #222;
+}

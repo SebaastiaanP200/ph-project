@@ -1,1 +1,15 @@
-<p>i-testimonial works!</p>
+<div class="testimony-wrapper">
+  @for (item of testimonies; track item.id; let i = $index) {
+    <div class="testimony__container" [id]="'testimony' + (i + 1)">
+      <h3 class="name__testimony">{{ item.name }}</h3>
+      
+      <img 
+        [src]="item.url" 
+        [alt]="'Testimony ' + item.name" 
+        [id]="'testimony-' + item.id" 
+        loading="lazy" />
+        
+      <p class="description__testimony">{{ item.description }}</p>
+    </div>
+  }
+</div>

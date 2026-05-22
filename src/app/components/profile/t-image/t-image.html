@@ -1,1 +1,10 @@
-<p>t-image works!</p>
+<div class="profile-images-wrapper">
+  @for (image of profile; track image.id) {
+    <img 
+      class="profile__image" 
+      [src]="image.url" 
+      [alt]="image.name" 
+      [id]="image.id" 
+      loading="lazy" />
+  }
+</div>

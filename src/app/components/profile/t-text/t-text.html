@@ -1,1 +1,7 @@
-<p>t-text works!</p>
+<div class="profile-text-wrapper">
+  @for (txt of texts; track $index) {
+    <div class="profile__text">
+      <p [id]="txt.id || ''">{{ txt.description }}</p>
+    </div>
+  }
+</div>
