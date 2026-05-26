@@ -17,7 +17,7 @@ export interface PortfolioSection {
 
 @Component({
   selector: 'app-portfolio',
-  imports: [NavBar, PageTitle, Main, Footer],
+  imports: [NavBar, PageTitle, Footer],
   templateUrl: './portfolio.html',
   styleUrl: './portfolio.scss',
 })
