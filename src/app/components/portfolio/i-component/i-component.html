@@ -1,0 +1,18 @@
+<div id="portfolio-container">
+  
+  @if (isLoading) {
+    <div class="loading-spinner">Cargando portfolio...</div>
+  } @else {
+    
+    @for (imgData of images; track imgData.url; let i = $index) {
+      <img 
+        class="portfolio__images" 
+        [id]="imgData.id || 'f' + (i + 1)" 
+        [src]="imgData.url" 
+        [alt]="imgData.name" 
+        loading="lazy" />
+    } @empty {
+      <p class="no-data">No se encontraron imágenes en esta galería.</p>
+    }
+  }
+</div>

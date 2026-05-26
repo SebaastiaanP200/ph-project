@@ -1,9 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NavBar } from '../../shared/components/nav-bar/nav-bar';
 import { Main } from '../../shared/components/main/main';
 import { Footer } from '../../shared/components/footer/footer';
 import { PageTitle } from '../../shared/components/page-title/page-title';
 
+export interface PreviewImage {
+  id: string | number;
+  url: string;
+  name: string;
+}
+
+export interface PortfolioSection {
+  link: string;
+  preview: PreviewImage[];
+}
 
 @Component({
   selector: 'app-portfolio',
@@ -11,6 +21,14 @@ import { PageTitle } from '../../shared/components/page-title/page-title';
   templateUrl: './portfolio.html',
   styleUrl: './portfolio.scss',
 })
+
 export class Portfolio {
   pTitle:string='CAPTURING STORIES';
+
+  @Input() portfolio: Record<string, PortfolioSection> = {}
+
+  get sections(): PortfolioSection[] {
+    return Object.values(this.portfolio);
+  }
+
 }

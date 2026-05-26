@@ -1,0 +1,86 @@
+
+.portfolio__title {
+	font-size: 3rem;
+	font-weight: 600;
+	text-align: center;
+	font-family: 'Courier New', Courier, monospace;
+	animation: aparecer both;
+	animation-timeline: view();
+	animation-range: cover 15% contain 50%;
+	text-shadow: 0 0 10px #000;
+	filter: drop-shadow(0 0 2px #fff);
+	font-style: oblique;
+	letter-spacing: 5px;
+	border-radius: 0px;
+	background-color: #222;
+	margin: 2rem auto;
+	padding: 1rem 0;
+}
+
+.portfolio__container {
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	width: 100%;
+	margin: 2rem auto;
+	background-color: #111;
+	border-radius: 120px 0 120px 0;
+	justify-content: space-evenly;
+}
+
+.portfolio__slider {
+	position: relative;
+	width: 65%;
+	height: 67%;
+	margin: auto;
+	overflow: hidden;
+	border-radius: 50%;
+	border: 10px solid #444;
+	filter: drop-shadow(3px 3px 0px #000);
+}
+
+.portfolio__slider:hover {
+	filter: drop-shadow(3px 3px 12px #222);
+	opacity: .8;
+}
+
+.portfolio__slider ul {
+	display: flex;
+	width: 400%;
+	height: auto;
+	animation: slide 12s infinite alternate-reverse ease-in-out both;
+}
+
+.portfolio__slider li {
+	list-style: none;
+	width: 100%;
+}
+
+.link__portfolio {
+	display: flex;
+	position: absolute;
+	z-index: 200;
+	justify-content: center;
+	align-items: center;
+	inset: 0;
+	color: transparent;
+	text-decoration: none;
+	text-align: center;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 2rem;
+	font-weight: 600;
+	transition: scale .9s;
+}
+
+.link__portfolio:hover {
+	filter: drop-shadow(0 0 5px #000);
+	color: #fff;
+	text-transform: uppercase;
+	text-decoration: underline;
+	scale: 1.25;
+}
+
+.portfolio__slider img {
+	width: 100%;
+	height: 66%;
+	object-fit: cover;
+}

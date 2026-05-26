@@ -4,8 +4,27 @@
 
 <app-page-title [title]="pTitle" />
 	
-	<section class="carousel__container"></section>
-	
-	<app-main/>
+<div id="portfolio-container">
+  
+  @for (section of sections; track section.link) {
+    <div class="portfolio__slider">
+      
+      <a [href]="section.link" class="link__portfolio">¡Open!</a>
+      
+      <ul>
+        @for (img of section.preview; track img.id) {
+          <li>
+            <img 
+              [src]="img.url" 
+              [alt]="img.name" 
+              [id]="img.id" 
+              loading="lazy" />
+          </li>
+        }
+      </ul>
+    </div>
+  }
+  
+</div>
 
 	<app-footer/>
