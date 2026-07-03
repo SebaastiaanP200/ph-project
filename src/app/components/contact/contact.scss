@@ -1,0 +1,273 @@
+h2 {
+	font-size: 3rem;
+  text-transform: uppercase;
+	font-weight: 600;
+	text-align: center;
+	font-family: 'Courier New', Courier, monospace;
+	animation: flash both;
+	animation-timeline: view();
+	animation-range: cover 15% contain 50%;
+	text-shadow: 0 0 10px #000;
+	filter: drop-shadow(0 0 2px #fff);
+	font-style: oblique;
+	letter-spacing: 5px;
+	border-radius: 0px;
+	background-color: #222;
+	margin: 2rem auto;
+	padding: 1rem 0;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+	background: linear-gradient(#000a, #0009);
+	padding: 1.5rem 2.5rem;
+	max-width: 1200px;
+	width: 60%;
+	margin: 1rem auto;
+	box-shadow: 0 0 2px #fff;
+	border-radius: 10px;
+	font-size: 1.2rem;
+}
+
+.form__input {
+  position: relative;
+}
+
+input, select, button {
+	width: 100%;
+  height: 3.5rem;
+  line-height: 3.5rem;
+	padding: 1rem;
+  outline: none;
+	border: none;
+	border-bottom: 3px solid #fff;
+  border-radius: 3px;
+	box-shadow: 3px 3px 3px #000;
+	background-color: #111;
+	color: var(--text-color);
+  transition: all .3s ease-in;
+}
+
+input::placeholder {
+  color: #999;
+}
+
+input:focus {
+ 	border-bottom: 3px solid #0075ff;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, .4);
+}
+
+.--error {
+  display: none;
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+.error-active {
+  display: block;
+  color: #bb2929;
+}
+
+.--validastate {
+  position: absolute;
+  top: 1.2rem;
+  right: .5rem;
+  z-index: 100;
+  font-size: 1.1rem;
+  opacity: 0;
+}
+
+.--term {
+  padding: 0;
+}
+
+.--checkbox {
+  margin-right: 1rem;
+  width: auto;
+  height: auto;
+  accent-color: #222;
+  cursor: pointer;
+}
+
+.--term-group, .form__msg, .--form-group {
+  grid-column: span 2;
+}
+
+.form__msg {
+  height: 3.5rem;
+  line-height: 3.5rem;
+  background-color: #410;
+  padding: 0 .5rem;
+  border-radius: 3px;
+  display: none;
+}
+
+.form__msg-active {
+  display: block;
+}
+
+.form__msg p {
+  margin: 0;
+}
+
+.services {
+  background-color: #111;
+	border-radius: 5px;
+	box-shadow: 0 0 5px #444;
+}
+
+.--select {
+  grid-column: span 1;
+  width: 100%;
+}
+
+.--placement {
+  grid-column: span 2;
+}
+
+.--pay {
+  grid-column: span 2;
+  line-height: 1.7rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.event, .date, .--send {
+  cursor: pointer;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+.--form-group{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.--send {
+  width: 40%;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 0;
+  transition: all .1s ease;
+}
+
+.--send:hover {
+  box-shadow: 3px 3px 3px #555;
+}
+
+.form__msg-e {
+  font-size: 1.1rem;
+  color: #11e200;
+  display: none;
+  margin-top: 1rem;
+}
+
+.form__msg-e-active {
+  display: block;
+}
+
+.form__group-correct .form__label {
+  color: #1ed12d;
+}
+
+.form__group-correct input {
+  color: #1ed12d;
+  border-bottom: 3px solid #1ed12d;
+}
+
+.form__group-correct .--validastate {
+  color: #1ed12d;
+  opacity: 1;
+}
+
+.form__group-incorrect .form__label {
+  color: #bb2929;
+}
+
+.form__group-incorrect input {
+  color: #bb2929;
+  border-bottom: 3px solid #bb2929;
+}
+
+.form__group-incorrect .--validastate {
+  color: #bb2929;
+  opacity: 1;
+}
+
+option {
+	background-color: #111;
+	color: #fff;
+}
+
+label {
+  display: block;
+	font-size: 1.2rem;
+  padding: 1rem.5rem;
+  cursor: pointer;
+}
+
+.checkbox {
+  margin-right: 1rem;
+  width: auto;
+  height: auto;
+  accent-color: #333;
+  cursor: pointer;
+}
+
+.checkbox__container {
+	background: linear-gradient(to bottom, #222, #0009);
+	margin: .1rem auto;
+	border-radius: 5px;
+	box-shadow: 0 0 5px #444;
+}
+
+.checkbox__label {
+	display: block;
+}
+
+.disclaimer {
+  width: 55%;
+  height: auto;
+	text-shadow: 2px 2px 3px #000, 0 0 2px #fff;
+	border: 2px dashed #777;
+	border-radius: 5px;
+	color: #333;
+  background: linear-gradient(to bottom, #222, #0009);
+	transition: color .5s ease-in-out;
+	animation: flash .4s forwards;
+  margin: 1rem auto;
+  padding: .9rem;
+}
+
+.disclaimer__container {
+  border: 1px solid #777;
+	border-radius: 5px;
+	animation: flash .4s forwards;
+  background: linear-gradient(to bottom, #222, #0009);
+  margin: 1rem auto;
+}
+
+.disclaimer__text {
+	list-style: none;
+	text-shadow: 2px 2px 3px #000, 0 0 2px #fff;
+	border-radius: 5px;
+	animation: flash .4s forwards;  
+	text-align: center;
+  text-wrap: pretty;
+  font-size: 1.2rem;
+}
+
+legend { 
+	padding: .5rem;
+	color: #fff;
+	text-shadow: 0 0 2px #fff;
+	text-align: center;
+	font-size: 1.3rem;
+}

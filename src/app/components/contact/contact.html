@@ -4,8 +4,109 @@
 
 <app-page-title [title]="cTitle" />
 	
-	<section class="carousel__container"></section>
-	
-	<app-main/>
+	<form [formGroup]="form" (ngSubmit)="onSubmit()" id="form__c">
+  
+  <div class="form__group" id="name__group" 
+		[ngClass]="{ 'form__group-correct': isFieldValid('name'), 'form__group-incorrect': isFieldInvalid('name') }">
+    <label for="name">Nombre</label>
+    <input type="text" id="name" formControlName="name" />
+    @if (isFieldValid('name')) { <i class="fa-solid fa-circle-check"></i> }
+    @if (isFieldInvalid('name')) { <i class="fa-solid fa-circle-xmark"></i> }
+    <p class="error-msg" [ngClass]="{ 'error-active': isFieldInvalid('name') }">El nombre no es válido.</p>
+  </div>
+
+  <div class="form__group" id="lastname__group" 
+       [ngClass]="{ 'form__group-correct': isFieldValid('lastname'), 'form__group-incorrect': isFieldInvalid('lastname') }">
+    <label for="lastname">Apellido</label>
+    <input type="text" id="lastname" formControlName="lastname" />
+    @if (isFieldValid('lastname')) { <i class="fa-solid fa-circle-check"></i> }
+    @if (isFieldInvalid('lastname')) { <i class="fa-solid fa-circle-xmark"></i> }
+  </div>
+
+  <div class="form__group" id="email__group" 
+       [ngClass]="{ 'form__group-correct': isFieldValid('email'), 'form__group-incorrect': isFieldInvalid('email') }">
+    <label for="email">Correo Electrónico</label>
+    <input type="email" id="email" formControlName="email" />
+  </div>
+
+  <div class="form__group" id="phone__group" 
+       [ngClass]="{ 'form__group-correct': isFieldValid('phone'), 'form__group-incorrect': isFieldInvalid('phone') }">
+    <label for="phone">Teléfono</label>
+    <input type="tel" id="phone" formControlName="phone" />
+  </div>
+
+  <div class="form__group" id="placement__group" 
+       [ngClass]="{ 'form__group-correct': isFieldValid('place'), 'form__group-incorrect': isFieldInvalid('place') }">
+    <label for="place">Lugar</label>
+    <input type="text" id="place" formControlName="place" (input)="onPlaceInput($event)" />
+  </div>
+
+  <div class="form__group">
+    <label for="eventType" (click)="$event.preventDefault(); eventSelect.click()">Tipo de Evento</label>
+    <select id="eventType" formControlName="eventType" #eventSelect (change)="onEventTypeChange()">
+      <option value="">Seleccione...</option>
+      <option value="kids">Infantil</option>
+      <option value="15">15 Años</option>
+      <option value="weddings">Casamiento</option>
+    </select>
+  </div>
+
+  @if (form.get('eventType')?.value === 'kids') {
+    <div id="kidsServices">
+      <label><input type="checkbox" value="animacion" (change)="onCheckboxChange($event, 'animacion')"> Animación</label>
+      <label><input type="checkbox" value="inflables" (change)="onCheckboxChange($event, 'inflables')"> Inflables</label>
+    </div>
+  }
+
+  @if (form.get('eventType')?.value === '15') {
+    <div id="15Services">
+      <label><input type="checkbox" value="dj" (change)="onCheckboxChange($event, 'dj')"> DJ & Luces</label>
+      <label><input type="checkbox" value="catering" (change)="onCheckboxChange($event, 'catering')"> Catering Premium</label>
+    </div>
+  }
+
+  @if (form.get('eventType')?.value === 'weddings') {
+    <div id="weddingsServices">
+      <label><input type="checkbox" value="fotografia" (change)="onCheckboxChange($event, 'fotografia')"> Fotografía Profesional</label>
+      <label><input type="checkbox" value="barra" (change)="onCheckboxChange($event, 'barra')"> Barra de Tragos</label>
+    </div>
+  }
+
+  <div class="form__group">
+    <label for="date" (click)="$event.preventDefault(); openCalendar(dateInput)">Fecha</label>
+    <input type="date" id="date" formControlName="date" #dateInput (click)="openCalendar(dateInput)" />
+  </div>
+
+  <div id="form__pay" [style.gridColumn]="isValidationUiActive ? 'span 1' : 'span 2'">
+    
+    <div class="disclaimer" 
+         [style.border]="isValidationUiActive ? '1px solid #eee' : 'none'"
+         [style.color]="isValidationUiActive ? '#fff' : '#444'">
+      Términos de Pago
+    </div>
+
+    @if (isValidationUiActive) {
+      <div id="payment">
+        <ul class="disclaimer__container">
+          @for (item of disclaimers; track $index) {
+            <li class="disclaimer__text" [innerHTML]="item.disclaimer"></li>
+          }
+        </ul>
+      </div>
+    }
+  </div>
+
+  <div class="form__group">
+    <label>
+      <input type="checkbox" id="term" formControlName="term" /> Acepto los términos y condiciones
+    </label>
+  </div>
+
+  <button type="submit">Enviar Solicitud</button>
+
+  <div id="form__msg-e" [ngClass]="{ 'form__msg-e-active': showSuccessMsg }">¡Formulario enviado con éxito!</div>
+  <div id="form__msg" [ngClass]="{ 'form__msg-active': showErrorMsg }">Ocurrió un error al enviar el formulario.</div>
+
+</form>
 
 	<app-footer/>
